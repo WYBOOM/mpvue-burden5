@@ -32,7 +32,7 @@ export default {
 <style>
 .counter-warp {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 1rem;
 }
 .home {
   display: inline-block;

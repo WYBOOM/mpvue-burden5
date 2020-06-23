@@ -109,3 +109,18 @@ module.exports = new Promise((resolve, reject) => {
     console.log('没有找到空闲端口，请打开任务管理器杀死进程端口再试', error)
   })
 })
+
+var config = require('../config')
+if (!process.env.NODE_ENV) {
+  process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
+}
+
+var path = require('path')
+var webpack = require('webpack')
+var webpackConfig = require('./webpack.dev.conf')
+var compiler = webpack(webpackConfig)
+
+require('webpack-dev-middleware-hard-disk')(compiler, {
+  publicPath: webpackConfig.output.publicPath,
+  quiet: true
+})
