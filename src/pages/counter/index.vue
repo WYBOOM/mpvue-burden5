@@ -18,6 +18,9 @@ export default {
       return store.state.count
     }
   },
+  created () {
+    // let app = getApp()
+  },
   methods: {
     increment () {
       store.commit('increment')

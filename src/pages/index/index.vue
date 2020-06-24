@@ -63,12 +63,18 @@ export default {
     clickHandle (ev) {
       console.log('clickHandle:', ev)
       // throw {message: 'custom test'}
-    }
-  },
 
-  created () {
-    // let app = getApp()
+      this.$http.get('/get_team_list').then((d) => {
+      // 输出请求数据
+        console.log(d.data)
+        // 输出响应头
+        console.log(d.header)
+      }).catch(err => {
+        console.log(err.status, err.message)
+      })
+    }
   }
+
 }
 </script>
 
