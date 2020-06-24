@@ -18,8 +18,13 @@ export default {
       return store.state.count
     }
   },
-  created () {
+
+  mounted () {
     // let app = getApp()
+    console.log('初始化couter')
+  },
+  onLoad () {
+    console.log('show')
   },
   methods: {
     increment () {
